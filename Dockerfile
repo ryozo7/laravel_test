@@ -22,5 +22,5 @@ COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . ./
 COPY --from=node-builder /app/public ./public
-RUN composer install
+RUN composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
 RUN chown -Rf www-data:www-data ./
