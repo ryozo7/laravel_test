@@ -93,26 +93,13 @@ class TaskController extends Controller
 
             Validator::make($request->all(), $rules, $messages)->validate();
 
-
-            //該当のタスクを検索
             $task = Task::find($id);
-
-            //モデル->カラム名 = 値 で、データを割り当てる
-            // $task->name = $request["task_name"];も同意義であり同じ挙動
             $task->name = $request->input('task_name');
 
-            //データベースに保存
             $task->save();
         } else {
-            //「完了」ボタンを押したとき
-
-            //該当のタスクを検索
             $task = Task::find($id);
-
-            //モデル->カラム名 = 値 で、データを割り当てる
-            $task->status = true; //true:完了、false:未完了
-
-            //データベースに保存
+            $task->status = true;
             $task->save();
         }
 

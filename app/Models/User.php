@@ -4,11 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
-=======
 use Illuminate\Database\Eloquent\Relations\HasMany;
->>>>>>> origin/main
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -47,11 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-<<<<<<< HEAD
-=======
+
     public function chirps(): HasMany
     {
         return $this->hasMany(Chirp::class);
     }
->>>>>>> origin/main
 }
