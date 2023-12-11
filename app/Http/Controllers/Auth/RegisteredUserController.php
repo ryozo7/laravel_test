@@ -32,7 +32,11 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+<<<<<<< HEAD
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+=======
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+>>>>>>> origin/main
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -46,6 +50,10 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+<<<<<<< HEAD
         return redirect("/tasks");
+=======
+        return redirect(RouteServiceProvider::HOME);
+>>>>>>> origin/main
     }
 }

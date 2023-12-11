@@ -29,7 +29,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+<<<<<<< HEAD
         return redirect()->intended("/tasks");
+=======
+        return redirect()->intended(RouteServiceProvider::HOME);
+>>>>>>> origin/main
     }
 
     /**

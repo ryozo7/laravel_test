@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+<<<<<<< HEAD
+=======
+use App\Events\ChirpCreated;
+use App\Listeners\SendChirpCreatedNotifications;
+>>>>>>> origin/main
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,6 +20,13 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
+<<<<<<< HEAD
+=======
+        ChirpCreated::class => [
+            SendChirpCreatedNotifications::class,
+        ],
+
+>>>>>>> origin/main
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
