@@ -17,7 +17,10 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Conditions::orderBy("input_date", "desc")->get();
+        $name =  Auth::user()->name;
+        $user = User::where('name', $name)->first();
+        $userId = $user->id;
+        $tasks = Conditions::where("user_id", $userId)->orderBy("input_date", "desc")->get();
         return view('tasks.index', ["tasks" => $tasks]);
     }
 
@@ -34,22 +37,11 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        // $rules = [
-        //     'task_name' => 'required|max:100',
-        // ];
-
-        // $messages = ['required' => '必須項目です', 'max' => '100文字以下にしてください。'];
-
-        // Validator::make($request->all(), $rules, $messages)->validate();
         // //モデルをインスタンス化
         $task = new Conditions;
-
-        //モデル->カラム名 = 値 で、データを割り当てる
         $name =  Auth::user()->name; // 検索したいユーザーネーム
 
         $user = User::where('name', $name)->first(); // usernameが指定した名前と一致する最初のレコードを取得
-        // dd($name);
         $userId = $user->id; // ユーザーIDを取得
 
         $task->user_id = $userId;

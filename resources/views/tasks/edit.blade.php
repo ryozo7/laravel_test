@@ -14,7 +14,7 @@
     <header class="bg-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="py-6">
-                <p class="text-white text-xl">Todoアプリ-編集画面</p>
+                <p class="text-white text-xl">こんこん-編集画面</p>
             </div>
         </div>
     </header>
@@ -109,7 +109,7 @@
     <footer class="bg-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="py-4 text-center">
-                <p class="text-white text-sm">Todoアプリ</p>
+                <p class="text-white text-sm">こんこん</p>
             </div>
         </div>
     </footer>
